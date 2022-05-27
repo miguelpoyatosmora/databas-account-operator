@@ -1,0 +1,9 @@
+apiVersion: database-account-operator.my.domain/v1
+kind: PostgreSQLAccount
+metadata:
+  name: postgresqlaccount-sample
+spec:
+  postgreSQLDatabaseName: postgresqldatabase-sample
+  name: miguel
+  password: '12345678' #TODO: Move this to secrets
+  valid_until: '2022-07-24'

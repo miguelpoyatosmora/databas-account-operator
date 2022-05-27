@@ -1,0 +1,13 @@
+apiVersion: database-account-operator.my.domain/v1
+kind: PostgreSQLDatabase
+metadata:
+  name: postgresqldatabase-sample
+spec:
+  address: 127.0.0.1:5432 #TODO: configure the right address for the postgres service 
+  user: postgres
+  password: ghdyKS47q5
+  database: postgres
+  encoding: UTF8
+  lc_collate: en_US.UTF-8
+  lc_ctype: en_US.UTF-8
+  

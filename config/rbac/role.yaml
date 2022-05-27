@@ -1,0 +1,85 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqldatabases
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqldatabases/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqldatabases/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlgrants
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlgrants/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlgrants/status
+  verbs:
+  - get
+  - patch
+  - update

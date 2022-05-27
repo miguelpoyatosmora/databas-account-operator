@@ -1,0 +1,20 @@
+# permissions for end users to view postgresqlaccounts.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: postgresqlaccount-viewer-role
+rules:
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts/status
+  verbs:
+  - get

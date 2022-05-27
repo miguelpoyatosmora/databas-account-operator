@@ -1,0 +1,11 @@
+apiVersion: database-account-operator.my.domain/v1
+kind: PostgreSQLGrant
+metadata:
+  name: postgresqlgrant-sample
+spec:
+  postgreSQLDatabaseName: postgresqldatabase-sample
+  type: 
+  - INSERT
+  - UPDATE
+  to: miguel
+  schema: my_new_schema

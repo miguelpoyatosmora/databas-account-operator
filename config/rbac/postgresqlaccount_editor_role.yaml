@@ -1,0 +1,24 @@
+# permissions for end users to edit postgresqlaccounts.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: postgresqlaccount-editor-role
+rules:
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - database-account-operator.my.domain
+  resources:
+  - postgresqlaccounts/status
+  verbs:
+  - get
